@@ -1,5 +1,24 @@
-Teste Gir
+Downloads Selenium
+https://www.selenium.dev/downloads/
+
+https://mvnrepository.com/
+
+JUnit
+@BeforeClass -> O método que tiver essa anotação será executado apenas uma vez e será sempre o primeiro de todos.
+
+@Before -> os métodos com essa anotação são executados uma vez antes de cada @Test.
+
+@Test -> Os métodos com @Test seriam os nossos casos de teste, ou seja, eles vão executar os passos necessários e validar se os
+resultados estão de acordo com o esperado.
 
 $ git unit
 
 Touk = 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 
+
+Api:
+https://restapi.wcaquino.me/ola
+
+Atalhos:
+Ctrl + 1 cria variavel
+
+Ctrl + Shift + F - Organiza códigos
