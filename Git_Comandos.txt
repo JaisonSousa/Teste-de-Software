@@ -18,6 +18,9 @@ Toke = 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
 Api:
 https://restapi.wcaquino.me/ola
 
+Sites uteis:
+Status code - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+
 Atalhos:
 Ctrl + 1 cria variavel
 
