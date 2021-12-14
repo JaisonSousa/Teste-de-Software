@@ -13,7 +13,7 @@ resultados estão de acordo com o esperado.
 
 $ git unit
 
-Toke = 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 
+Toke = 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
 
 Api:
 https://restapi.wcaquino.me/ola

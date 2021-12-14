@@ -8,6 +8,8 @@ import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
+import static io.restassured.RestAssured.*;
+
 public class OlaMundoTest {
 	
 	@Test
@@ -22,11 +24,26 @@ public class OlaMundoTest {
 		 Assert.assertTrue("O status code deveria ser 200" ,response.getStatusCode() == 200);
 		 Assert.assertEquals(200, response.statusCode());
 		 
-		
 		ValidatableResponse validacao = response.then();
 		validacao.statusCode(200);
 		
-
 	}
+	
+	@Test
+	public void devoConhecerOutrasFormasRestAssured() {
+		
+		Response response = request(Method.GET, "https://restapi.wcaquino.me/ola");
+		 
+		ValidatableResponse validacao = response.then();
+		validacao.statusCode(200);
+		
+		
+		given() // Pré Condições
+		.when().get("https://restapi.wcaquino.me/ola") // Ação
+		.then() // Assertivas
+		.statusCode(200); 
+	}    
+	
+	
 
 }
