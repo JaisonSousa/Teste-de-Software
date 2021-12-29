@@ -20,6 +20,7 @@ https://restapi.wcaquino.me/ola
 
 Sites uteis:
 Status code - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+Matchers. Hamcrest: http://hamcrest.org/JavaHamcrest/javadoc/1.3/org/hamcrest/Matchers.html
 
 Atalhos:
 Ctrl + 1 cria variavel

@@ -9,6 +9,14 @@ import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertThat;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
 
 public class OlaMundoTest {
 	
@@ -42,8 +50,46 @@ public class OlaMundoTest {
 		.when().get("https://restapi.wcaquino.me/ola") // Ação
 		.then() // Assertivas
 		.statusCode(200); 
-	}    
+	}   
 	
+	@Test
+	public void devoConhecerMatcherHamcrest() {
+		Assert.assertThat("Maria", Matchers.is("Maria"));
+		Assert.assertThat(128, Matchers.is(128));
+		Assert.assertThat(128, Matchers.isA(Integer.class));
+		Assert.assertThat(128d, Matchers.isA(Double.class));
+		Assert.assertThat(128d, Matchers.greaterThan(120d));
+		Assert.assertThat(128d, Matchers.lessThan(130d));
+		
+		List<Integer> impares = Arrays.asList(1,3,5,7,9);
+		assertThat(impares, hasSize(5));
+		assertThat(impares, contains(1,3,5,7,9));
+		assertThat(impares, containsInAnyOrder(1,3,5,9,7));
+		assertThat(impares, hasItem(1));
+		assertThat(impares, hasItems(1,5));
+		
+		assertThat("Maria", is(not("João")));
+		assertThat("Maria", not("João"));
+		assertThat("Joaquina", anyOf(is("Maria"), is("Joaquina")));
+		assertThat("Joaquina", anyOf(startsWith("Joa"), endsWith("ina"), containsString("qui")));
+		
+		
+
+	}
+	
+	@Test
+	public void devoValidarBody() {
+		
+		given() // Pré Condições
+		.when().get("https://restapi.wcaquino.me/ola") // Ação
+		.then() // Assertivas
+		.statusCode(200)
+		.body(is("Ola Mundo!"))
+		.body(containsString("Mundo"))
+		.body(is(not(nullValue())));
+		
+		
+	}
 	
 
 }
