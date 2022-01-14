@@ -3,6 +3,7 @@ package br.ce.wcjaison.rest;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsString;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.hamcrest.Matchers.*;
@@ -62,7 +63,6 @@ public class UserJsonTest {
 		.body("name", containsString("Joaquina"))
 		.body("endereco.rua", is("Rua dos bobos"));
 		
-
 	}
 	
 	@Test
@@ -139,12 +139,26 @@ public class UserJsonTest {
 		.body("salary.findAll{it != null}.sum()", is(closeTo(3734.5678f, 0.001)))
 		.body("salary.findAll{it != null}.sum()", allOf(greaterThan(3000d), lessThan(5000d)))
 		
-		
-		
 		;
 		
 	}
 	
+	@Test
+	public void devoUnirJsonPathComJAVA() {
+		ArrayList<String> names =
+		given() // Pré Condições
+		.when()
+		.get("https://restapi.wcaquino.me/users") // Ação
+		.then() // Assertivas
+		.statusCode(200)
+		.extract().path("name.findAll{it.startsWith('Maria')}")
+		;
+		
+		Assert.assertEquals(1, names.size());
+		Assert.assertTrue(names.get(0).equalsIgnoreCase("mAria Joaquina"));
+		Assert.assertEquals(names.get(0).toUpperCase(), "maria joaquina".toUpperCase());
+		
+	}
 	
 
 }
