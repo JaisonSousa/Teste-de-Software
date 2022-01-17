@@ -2,11 +2,13 @@ package br.ce.wcjaison.rest;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.Request;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -88,6 +90,39 @@ public class OlaMundoTest {
 		.body(containsString("Mundo"))
 		.body(is(not(nullValue())));
 		
+		
+	}
+	
+	private static String requestBody = "{\n" +
+            "  \"title\": \"foo\",\n" +
+            "  \"body\": \"bar\",\n" +
+            "  \"userId\": \"1\" \n}";
+	
+	@Test
+	public void testMetodoPost() {
+		
+		RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+		
+		RequestSpecification req = RestAssured.given();
+		req.header("Content-Type", "application/json");
+		req.body(requestBody);
+		Response res = req.post("/posts");
+		int code = res.getStatusCode();
+		
+		System.out.println(code);
+		System.out.println("Response body: " + res.body().asString());
+		
+//		Response response = RestAssured.request(Method.GET, "/ola");
+//		System.out.println(response.getBody().asString().equals("Ola Mundo!"));
+//		System.out.println(response.getStatusCode() == 200);
+//		
+//		 Assert.assertTrue(response.getBody().asString().equals("Ola Mundo!"));
+//		 Assert.assertTrue(response.getStatusCode() == 200);
+//		 Assert.assertTrue("O status code deveria ser 200" ,response.getStatusCode() == 200);
+//		 Assert.assertEquals(200, response.statusCode());
+//		 
+//		ValidatableResponse validacao = response.then();
+//		validacao.statusCode(200);
 		
 	}
 	

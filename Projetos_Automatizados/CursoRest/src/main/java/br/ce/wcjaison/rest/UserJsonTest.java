@@ -15,6 +15,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 public class UserJsonTest {
 	
@@ -29,18 +30,23 @@ public class UserJsonTest {
 		.body("id", is(1))
 		.body("name", containsString("Silva"))
 		.body("age", greaterThan(18));
-		
-
 	}
 	
 	@Test
 	public void deveVerificarPrimeiroNivelOutrasFormas() {
 		
+		RequestSpecification req;
+		
 		Response response = RestAssured.request(Method.GET, "https://restapi.wcaquino.me/users/1");
 		
+		int code = response.statusCode();
+		
+		System.out.println(code);
+	
 		//path
 		Assert.assertEquals(new Integer(1), response.path("id"));
 		Assert.assertEquals(new Integer(1), response.path("%s","id"));
+		
 		
 		//jsonpath
 		JsonPath jpath = new JsonPath(response.asString());
@@ -85,7 +91,7 @@ public class UserJsonTest {
 	@Test
 	public void deveRetornarErroUsuarioInesixistente() {
 		
-		given() // Pré Condições
+	    given() // Pré Condições
 		.when()
 		.get("https://restapi.wcaquino.me/users/4") // Ação
 		.then() // Assertivas

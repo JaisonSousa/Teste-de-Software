@@ -17,6 +17,9 @@ Toke = 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
 
 Api:
 https://restapi.wcaquino.me/ola
+https://seubarriga.wcaquino.me/login
+
+https://jsonplaceholder.typicode.com/
 
 Sites uteis:
 Status code - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
