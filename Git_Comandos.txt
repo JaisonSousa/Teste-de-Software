@@ -13,7 +13,7 @@ resultados estão de acordo com o esperado.
 
 $ git unit
 
-Toke = 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
+Toke = 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
 
 Api:
 https://restapi.wcaquino.me/ola
@@ -24,6 +24,7 @@ https://jsonplaceholder.typicode.com/
 Sites uteis:
 Status code - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
 Matchers. Hamcrest: http://hamcrest.org/JavaHamcrest/javadoc/1.3/org/hamcrest/Matchers.html
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods
 
 Atalhos:
 Ctrl + 1 cria variavel
