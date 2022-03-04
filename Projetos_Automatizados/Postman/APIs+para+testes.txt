@@ -1,0 +1,5 @@
+APIs para teste
+
+https://gorest.co.in/
+http://dummy.restapiexample.com/
+https://docs.postman-echo.com/

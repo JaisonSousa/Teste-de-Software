@@ -1,2 +1,30 @@
----- CURPSO DE POSTMAN-------------
+---- CURPSO DE POSTMAN------------------
 AUTOMATIZANDO TESTES DE API COM POSTMAN
+----------------------------------------
+
+1. SOBRE O POSTMAN
+
+CRIAÇÃO E EXECUTAR QUERYS REST E SOAP
+IMPORTAÇÃO DE COLEÇÃO
+INCLUIR CÓDIGO
+HISTORICO DE REQUISIÇÕES
+
+2. INSTALANDO O POSTMAN
+
+https://www.postman.com/postman/workspace/published-postman-templates/documentation/631643-f695cab7-6878-eb55-7943-ad88e1ccfd65
+
+https://gorest.co.in/
+
+CRIANDO COLEÇÕES
+
+Agrupa requisições em pastas;
+Reuso de requisições;
+Podem ser importadas e exportadas
+
+1. NOME
+2. DESCRIÇÃO
+3. AUTORIZAÇÃO
+4. SCRIPTS DE PRÉ REQUISIÇÃO
+5. TESTES
+6. VARIÁVEIS
+
