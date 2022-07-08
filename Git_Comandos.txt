@@ -13,11 +13,15 @@ resultados estão de acordo com o esperado.
 
 $ git unit
 
-Toke = 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
+Toke = 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
 
 Api:
 https://restapi.wcaquino.me/ola
 https://seubarriga.wcaquino.me/login
+
+Api Projeto
+https://hunter.io
+https://hunter.io/api-documentation/v2
 
 https://jsonplaceholder.typicode.com/
 
